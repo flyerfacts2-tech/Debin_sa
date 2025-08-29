@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+    /* BASIC STYLES */
+    body { margin: 0; font-family: Arial, sans-serif; color: #333; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    section { padding: 60px 20px; max-width: 900px; margin: auto; }
+    header { color: #000; text-align: center; }
+
+    nav { 
+      position: sticky; 
+      top: 0; 
+      background: #fff; 
+      border-bottom: 1px solid #ddd; 
+      display: flex; 
+      justify-content: center; 
+      gap: 20px; 
+      padding: 10px 0; 
+      z-index: 1000; 
+    }
+    nav a { padding: 8px 12px; transition: background 0.3s; }
+    nav a:hover, nav a.active { background: #f0f0f0; }
+
+    /* HERO */
+    .hero {
+      padding: 60px 20px;
+      background: lightblue; /* Light blue background at top */
+      text-align: center;
+    }
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%; /* makes it a circle */
+      object-fit: cover;
+      border: 3px solid #fff;
+      margin-bottom: 20px;
+    }
+    .hero button {
+      padding: 10px 20px;
+      background: #0073e6;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+      border-radius: 5px;
+    }
+    .hero button:hover { background: #005bb5; }
+
+    footer { text-align: center; padding: 20px; background: #222; color: #fff; }
+
+    @media (max-width: 600px) { nav { flex-wrap: wrap; } }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <img src="mypic.jpg" alt="My Photo">
+    <h1>Debin Sabu</h1>
+    <p>Aviation  | Cuts | Moments 
+<P>Fueled by passion,Grounded in Faith </P>
+    <button onclick="window.location.href='#contact'">Contact Me</button>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi, I’m Debin Sabu. I’m currently studying Computer Science and
+     love exploring creativity through video editing and photography.
+      Capturing moments and turning them into meaningful visuals is something I truly enjoy.
+
+Alongside tech and creativity,
+ I’m also fascinated by aviation—it inspires me to dream big and aim higher. 
+ Whether it’s coding, editing, or clicking photos,
+  I’m always looking to learn, improve, and create something new.</p>
+  </section>
+
+  
+
+  <section id="skills">
+    <h2>Skills & Tools</h2>
+    <p> Hi, I’m a photographer and videographer.
+     I enjoy capturing real moments and turning them into stories.
+      For photos, I use Lightroom to bring out the best colors and details.
+       For videos, I work with DaVinci Resolve, CapCut, and Premiere Pro to edit and create smooth, professional results.,
+        by the way if you have any requirement Do contact Me
+         </p>
+  </section>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>Email: <a href="mailto:youremail@example.com"> debinsa321@gmail.com </a></p>
+    <p>Phone: 9895067053 </p>
+  </section>
+
+  <footer>
+    © 2025 Debin_Sa – All rights reserved.
+  </footer>
+
+  <script>
+    // Highlight active menu on scroll
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href')));
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY + 200;
+      navLinks.forEach((a, idx) => {
+        const sec = sections[idx];
+        a.classList.toggle('active', scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight);
+      });
+    });
+  </script>
+</body>
+</html>
